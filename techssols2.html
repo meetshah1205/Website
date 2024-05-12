@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html spellcheck="truess">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CyberGauridian -Techniques and Solutions</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div  
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+    >
+        <header 
+        style="
+        width: 100vw;
+        ">
+            <!-- <h1>CyberGuardian</h1> -->
+            <a href="./index.html">
+                <img src="CyberGaurdian-logos.jpeg">
+            </a>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a class="current" href="./techssols.html">Techniques And Solutions</a>
+            </nav>
+        </header>
+        <br>
+        <br>
+        <br>
+        <h1>Now lets talk about how Hackers hack your computer using their passwords and Hashes.</h1> <br>
+        <h2>The entire process will be documented here and I will also show you how to defend against it.</h2><br>
+        <h2>So basically the Hacker needs just a Kali Linux computer (or sometimes even a <u><a style="color: blue;"
+                    class="text-xl font-semibold text-gray-800 mb-4" href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine)</a> </u> </h2><br>
+        <h2>Linux is sometimes considered a programmers and hackers only operating system. Which nobody knows why.</h2>
+        <div class="bigfont1">
+            Now Disclaimer: <br>
+            The things showed/discussed from now is a real hacking technique. So even if you decide to use it on someone
+            (ethically) please make sure you have explicit permission and are following all the rules.
+        </div>
+        <br>
+        <br>
+        <br>
+        <p>So let's assume the Hacker(s) has the access to your Windows Computer, but he or she is too greedy to just
+            have it once. So what will he do? Buy your computer? OF COURSE NOT. Hack it? Yes, that's what a sigma do.
+            Please do not take it seriously.</p>
+
+        <br>
+
+        <p>So let's continue without anymore time-waste.</p>
+
+        <p>So let's you have a password in your Windows Computer, which is a very good thing.</p>
+        <p>Windows doesn't just your passwords in plain text form. </p>
+        <p>It is stored in the form of something called <b class="yellow">HASH</b>. </p>
+        <p>If you don't what a <b class="yellow">HASH</b> is, read this <u><a style="color: blue;"
+                   class="text-xl font-semibold text-gray-800 mb-4" href="https://en.wikipedia.org/wiki/Hash_function"><i> Wikipedia Article </i> </u></a> </p>
+
+        <p>For the sake of education we will assume that your password is:</p>
+        <p class="yellow">Sup3rs3RETP@@$$word</p>
+        <p>Which is a good password and indicated that you used some kind of password generator to generate this. Even
+            then you will be hacked.</p>
+        <p>After you set this password, it will be went through a hashing algorithm. Which in this case is: <br>
+        <p class="yellow">MD4 Hashing algorithm</b> after which it will look like somebody chewed and spat out.
+        </p>
+        <p>After hashing the password will look something like this: <br></p>
+        <p class="hash">ca0a1e55c19606f471a5b3ecf8054271</p>
+        <p>So whenever you type in the password it will again go through the <b class="yellow">MD4 Hashing algorithm</b>
+            and if the hashes match, you will login.</p>
+
+        <p>This hash is what the hacker needs to get into your Computer from his.</p>
+        <p>While it would not immediately tell the hacker what the hash is, it will, the hacker will crack it.</p>
+        <p>Actually not entirely the hacker because he will need some softwares.</p>
+        <p>Now lets talk about the process through which the Hacker will get the hash, and break into your computer.</p>
+        <ul>
+            <br>
+            <!-- <br>
+            <br> -->
+            <li>Get access to your system once.</li>
+            <p>He or she will need the access to your computer atleast once to get the files needed from your computer
+                to get the hash.</p>
+            <p>After getting physical access to your computer once, he will try his or her best to get the files as
+                quickly as possible.</p>
+            <br>
+            <li>Get the files</li>
+            <p>He will search for <b class="yellow">Resgistry Editor</b></p>
+            <p>He will get the UAC prompt saying that <b class="yellow">"Do you want to allow this applcation to make
+                    changes to your system?"</b> which you might also get while installing anything on your Windows
+                machine. On which the hacker will click yes.</p>
+            <p>He will ofcource just click yes. Luckily for him, you are the administrator on your system.</p>
+            <p>Then he will go to <b class="yellow">HKEY_LOCAL_MACHINE</b>.</p>
+            <p>There he will see files or folders called <b class="yellow">SAM</b> and <b class="yellow">SYSTEM</b>.</p>
+            <p>Lets say he does it with the <b class="yellow">command prompt</b>.</p>
+            <p>After in <b class="yellow">CMD</b> he will type the following command to get the sam file:</p>
+            <div class="sqlq">
+                $ <span class="yellow">reg</span> <span class="grey">save HKLM\sam ./sam.save</span>
+            </div>
+            <p>And this one to get the systme file:</p>
+            <div class="sqlq">
+                $ <span class="yellow">reg</span> <span class="grey">save HKLM\system ./system.save</span>
+            </div>
+
+            <br>
+
+            <li>Get the files in a flash drive.</li>
+            <p>He will get the flash drive, plug it in your computer and copy (or cut) the files and paste it into the
+                flash drive.</p>
+        </ul>
+        <br><br><br>
+        <h3 style="font-size: 27px;">Now that he has the files needed to get the hash, he will go back to his Kali Linux
+            Machine.</h3>
+        <br><br>
+        <ul>
+            <li>Plug the flash drive into his computer.</li>
+            <p>Does it even need to be explained? Isn't it so clear that he pluged it into his computer.</p>
+            <br>
+            <br>
+            <li>Unpack the files to get hash</li>
+            <p>The tool generally used to grab the hash out of <b class="yellow">SAM</b> and <b
+                    class="yellow">SYSTEM</b> files is called <b class="yellow"><i>impacket-secretsdump</i></b>, that is
+                a very wierd name. It is built into Kali Linux.</p>
+            <p>If the hacker isn't using Kali, he will type in this command in the terminal to get it:</p>
+             <div class="sqlq">
+            $ <span class="blue">sudo</span> <span class="cyan">apt</span> search impacket
+            </div>
+            <p>Then he install it with this command:</p>
+             <div class="sqlq">
+            $ <span class="blue">sudo</span> <span class="cyan">apt install</span> impacket
+            </div>
+            <br>
+            <br>
+            <li>Get the hash</li>
+            <p>To get the hash, he will run this command:</p>
+            <div class="sqlq">
+                $ <span class="cyan">impacket-secretsdump -sam</span> sam.save <span class="cyan">-system</span>
+                system.save LOCAL
+            </div>
+            <p>And there goes your Hash.</p>
+            <p>He got your Hash in three-four lines of termianl.</p>
+            <br>
+            <br>
+            <li>Crack the password</li>
+            <p>Generally in older times Hackers used <i class="grey">Brute Force Attacks</i> which means keep guessing
+                passwords until they get it correct. But this method is useless after mordern password-generators became
+                popular, as they had no pattern and the passwords were very random.</p>
+            <p>If you want a good password generator I have one that I made, it is totally safe and the passwords are
+                very random.</p>
+            <a class="text-xl font-semibold text-gray-800 mb-4" href="./main.html">Try it out your self.</a>
+            <p>The hacker will need a list of passwords that could be your password. Probably 20,000 passwords, 50,000
+                passwords, 100,000 passwords. Unluckily or Luckily there are tools that can automate that.</p>
+            <p>Now he will use a tool called <b><i class="yellow">CUPP</i></b> to get the hash and see what is happening
+                on the screen of the target.</p>
+          <br>
+          <br>
+                <li>Use <i class="yellow">CUPP</i> to get your password through your details.</li>
+            <p>He will use <i class="yellow">CUPP</i> to get your password through your Name, IP, Birthdate and other
+                things to get your passwords and see the things happening on your screen.</p>
+            <div class="sqlq">
+              $  cupp -i
+            </div>
+            <p>Now he will type your details to get your passwords.</p>
+            <p>They will ask for your Full Name, Birthdate, Wife's name, child's name, company name etc.</p>
+            <p>Then <i class="yellow">CUPP</i> will generate a list of passwords that could be your password.</p>
+            <br>
+            <br>
+            <li>Now try to get your password from the list of passwords.</li>
+            <p>There is a very popular tool for this called <b><u><i class="yellow">hashcat</i></u></b>.</p>
+            <p>He will now use hashcat to get your password.</p>
+            <div class="sqlq">
+                $ <span class="blue">sudo</span> <span class="cyan">hashcat -m</span> 1000 <b>hash.txt
+                    listofpasswords.txt</b>
+            </div>
+            <p>1000 is NTLM algorithm that Windows uses. hash.txt is the file that has the hash of the Windows computer.
+                listofpasswords.txt is the list of passwords <i class="yellow">CUPP</i> generated.</p>
+            <p>Now he will see that the Status of password is <span class="red">CRACKED</span>.</p>
+            <p>Now he will use this command to show the password:</p>
+            <div class="sqlq">
+                $ <span class="blue">sudo</span> <span class="cyan">hashcat -m</span> 1000 <b>hash.txt
+                    listofpasswords.txt</b> <span class="cyan">--show</span>
+            </div>
+            <p>Now he will have the Hash and the password. Now all that is left to do is see the things happening on
+                your screen.</p>
+            <br>
+            <br>
+            <li>EVIL-WINRM</li>
+            <p>Evil-WINRM is a tool often used in cybersecurity assesments and penetration testing. It leverages the
+                WINRM protocol to exploit potential vulnerabilities in Windows Systems. </p>
+            <p>He will type this command to get access to your PowerShell and Eventually your screen.</p>
+            <div class="sqlq">
+                $ <span class="cyan">evil-winrm -i</span> yo.ur.ip.addr <span class="cyan">-u</span> yourusername <span
+                    class="cyan">-p</span> thecrackedpassword
+            </div>
+            <p>That gave the hacker the access to your systme's PowerShell.</p>
+            <p>Now the access to your screen.</p>
+            <div class="sqlq">
+                $ <span class="cyan">xfreedp</span> /v: yo.ur.ip.addr /u: yourusername /p: thecrackedpassword
+            </div>
+            <p>Now let's talk about the ways that hacker can get to your PowerShell with just the Hash with this
+                command:</p>
+            <div class="sqlq">
+                $ <span class="cyan">evil-winrm -i</span> yo.ur.ip.addr <span class="cyan">-u</span> yourusername <span
+                    class="cyan">-H</span> thehashgotfromthefiles
+            </div>
+
+            <p>Another thing that can be used to getcthe screen access without password with <b><i class="yellow">Pass
+                        The Hash Algorithm</i></b></p>
+            <div class="sqlq">
+                $ <span class="cyan">xfreedp</span> /v: yo.ur.ip.addr /u: yourusername /pth: thehashgotfromthefiles
+            </div>
+        </ul>
+        <div style="font-size: 29px; color: #ff0000;" class="paras">
+
+        <div>Now lets talk about how you can defend your devices from this.</div>
+        <div>Here are a few examples of defence ideas and protocols against Windows Password Hacking.</div>
+        </div>
+        <br>
+        <br>
+        <ul>
+            <li>Switch to another OS.</li>
+            <p>As Windows is so unsafe to use and takes a lot of ram and storage for just a fancy UI and features you will never use. That is the reason why many big tech companies use OS like MacOS or Linux etc.</p>
+            <p>There are alot of different distros of Linux like the most beginner friendly one <b style="color: orange;">Ubuntu</b> or <b style="color: #0090ff; font-family: 'Poppins', sans-serif; font-weight: 590;">fedora</b> and MacOS is also an option if you can afford it.</p>
+            <br>
+            <li>Hope</li>
+            <p>This is not a good option. Still you can hope 😊.</p>
+
+        </ul>
+        <br> <br> <br>
+        <div class="btns">
+        <a href="./techssols.html">
+        <button class="back">&larr;</button>
+        </a>   
+        <a href="./error.html">
+            <button class="back">&rarr;</button>
+        </a>
+        <br><br><br><br><br>
+        </div><br>
+       
+        <!--This is main div closing tag.-->
+        <br><footer>
+            <div class="text-center text-2xl text-red-500 mb-4">
+                Disclaimer:
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                <p class="text-lg text-gray-700">
+                    All the techniques demonstrated here or later are purely for educational and security purposes. Do not
+                    use this unethically.
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

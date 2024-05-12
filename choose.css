@@ -1,0 +1,15 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+ body{
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 24px;
+ }
+
+#cmd{
+   color: white;
+   transition: all ease 1s;
+}
+
+#cmd:hover{
+   color: blue;
+}
