@@ -7,12 +7,16 @@
     <title>CyberGauridian -Techniques and Solutions</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="backup.css">
 </head>
 
 <body>
-    <div class="ontainer mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <header>
+    <div  
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+    >
+        <header 
+        style="
+        width: 100vw;
+        ">
             <!-- <h1>CyberGuardian</h1> -->
             <a href="./index.html">
                 <img src="CyberGaurdian-logos.jpeg">
@@ -21,7 +25,6 @@
                 <a href="./index.html">Home</a>
                 <a href="./about.html">About</a>
                 <a class="current" href="./techssols.html">Techniques And Solutions</a>
-
             </nav>
         </header>
         <br>
@@ -30,7 +33,7 @@
         <h1>Now lets talk about how Hackers hack your computer using their passwords and Hashes.</h1> <br>
         <h2>The entire process will be documented here and I will also show you how to defend against it.</h2><br>
         <h2>So basically the Hacker needs just a Kali Linux computer (or sometimes even a <u><a style="color: blue;"
-                    href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine)</a> </u> </h2><br>
+                    class="text-xl font-semibold text-gray-800 mb-4" href="https://en.wikipedia.org/wiki/Virtual_machine">Virtual Machine)</a> </u> </h2><br>
         <h2>Linux is sometimes considered a programmers and hackers only operating system. Which nobody knows why.</h2>
         <div class="bigfont1">
             Now Disclaimer: <br>
@@ -52,7 +55,7 @@
         <p>Windows doesn't just your passwords in plain text form. </p>
         <p>It is stored in the form of something called <b class="yellow">HASH</b>. </p>
         <p>If you don't what a <b class="yellow">HASH</b> is, read this <u><a style="color: blue;"
-                    href="https://en.wikipedia.org/wiki/Hash_function"><i> Wikipedia Article </i> </u></a> </p>
+                   class="text-xl font-semibold text-gray-800 mb-4" href="https://en.wikipedia.org/wiki/Hash_function"><i> Wikipedia Article </i> </u></a> </p>
 
         <p>For the sake of education we will assume that your password is:</p>
         <p class="yellow">Sup3rs3RETP@@$$word</p>
@@ -91,11 +94,11 @@
             <p>Lets say he does it with the <b class="yellow">command prompt</b>.</p>
             <p>After in <b class="yellow">CMD</b> he will type the following command to get the sam file:</p>
             <div class="sqlq">
-                <span class="yellow">reg</span> <span class="grey">save HKLM\sam ./sam.save</span>
+                $ <span class="yellow">reg</span> <span class="grey">save HKLM\sam ./sam.save</span>
             </div>
             <p>And this one to get the systme file:</p>
             <div class="sqlq">
-                <span class="yellow">reg</span> <span class="grey">save HKLM\system ./system.save</span>
+                $ <span class="yellow">reg</span> <span class="grey">save HKLM\system ./system.save</span>
             </div>
 
             <br>
@@ -118,19 +121,19 @@
                     class="yellow">SYSTEM</b> files is called <b class="yellow"><i>impacket-secretsdump</i></b>, that is
                 a very wierd name. It is built into Kali Linux.</p>
             <p>If the hacker isn't using Kali, he will type in this command in the terminal to get it:</p>
-            <div class="sqlq">
-                <span class="blue">sudo</span> <span class="cyan">apt</span> search impacket
+             <div class="sqlq">
+            $ <span class="blue">sudo</span> <span class="cyan">apt</span> search impacket
             </div>
             <p>Then he install it with this command:</p>
-            <div class="sqlq">
-                <span class="blue">sudo</span> <span class="cyan">apt install</span> impacket
+             <div class="sqlq">
+            $ <span class="blue">sudo</span> <span class="cyan">apt install</span> impacket
             </div>
             <br>
             <br>
             <li>Get the hash</li>
             <p>To get the hash, he will run this command:</p>
             <div class="sqlq">
-                <span class="cyan">impacket-secretsdump -sam</span> sam.save <span class="cyan">-system</span>
+                $ <span class="cyan">impacket-secretsdump -sam</span> sam.save <span class="cyan">-system</span>
                 system.save LOCAL
             </div>
             <p>And there goes your Hash.</p>
@@ -143,7 +146,7 @@
                 popular, as they had no pattern and the passwords were very random.</p>
             <p>If you want a good password generator I have one that I made, it is totally safe and the passwords are
                 very random.</p>
-            <a style="color: blue; text-decoration: underline;" href="./main.html">Try it out your self.</a>
+            <a class="text-xl font-semibold text-gray-800 mb-4" href="./main.html">Try it out your self.</a>
             <p>The hacker will need a list of passwords that could be your password. Probably 20,000 passwords, 50,000
                 passwords, 100,000 passwords. Unluckily or Luckily there are tools that can automate that.</p>
             <p>Now he will use a tool called <b><i class="yellow">CUPP</i></b> to get the hash and see what is happening
@@ -154,7 +157,7 @@
             <p>He will use <i class="yellow">CUPP</i> to get your password through your Name, IP, Birthdate and other
                 things to get your passwords and see the things happening on your screen.</p>
             <div class="sqlq">
-                cupp -i
+              $  cupp -i
             </div>
             <p>Now he will type your details to get your passwords.</p>
             <p>They will ask for your Full Name, Birthdate, Wife's name, child's name, company name etc.</p>
@@ -165,7 +168,7 @@
             <p>There is a very popular tool for this called <b><u><i class="yellow">hashcat</i></u></b>.</p>
             <p>He will now use hashcat to get your password.</p>
             <div class="sqlq">
-                <span class="blue">sudo</span> <span class="cyan">hashcat -m</span> 1000 <b>hash.txt
+                $ <span class="blue">sudo</span> <span class="cyan">hashcat -m</span> 1000 <b>hash.txt
                     listofpasswords.txt</b>
             </div>
             <p>1000 is NTLM algorithm that Windows uses. hash.txt is the file that has the hash of the Windows computer.
@@ -173,7 +176,7 @@
             <p>Now he will see that the Status of password is <span class="red">CRACKED</span>.</p>
             <p>Now he will use this command to show the password:</p>
             <div class="sqlq">
-                <span class="blue">sudo</span> <span class="cyan">hashcat -m</span> 1000 <b>hash.txt
+                $ <span class="blue">sudo</span> <span class="cyan">hashcat -m</span> 1000 <b>hash.txt
                     listofpasswords.txt</b> <span class="cyan">--show</span>
             </div>
             <p>Now he will have the Hash and the password. Now all that is left to do is see the things happening on
@@ -185,25 +188,25 @@
                 WINRM protocol to exploit potential vulnerabilities in Windows Systems. </p>
             <p>He will type this command to get access to your PowerShell and Eventually your screen.</p>
             <div class="sqlq">
-                <span class="cyan">evil-winrm -i</span> yo.ur.ip.addr <span class="cyan">-u</span> yourusername <span
+                $ <span class="cyan">evil-winrm -i</span> yo.ur.ip.addr <span class="cyan">-u</span> yourusername <span
                     class="cyan">-p</span> thecrackedpassword
             </div>
             <p>That gave the hacker the access to your systme's PowerShell.</p>
             <p>Now the access to your screen.</p>
             <div class="sqlq">
-                <span class="cyan">xfreedp</span> /v: yo.ur.ip.addr /u: yourusername /p: thecrackedpassword
+                $ <span class="cyan">xfreedp</span> /v: yo.ur.ip.addr /u: yourusername /p: thecrackedpassword
             </div>
             <p>Now let's talk about the ways that hacker can get to your PowerShell with just the Hash with this
                 command:</p>
             <div class="sqlq">
-                <span class="cyan">evil-winrm -i</span> yo.ur.ip.addr <span class="cyan">-u</span> yourusername <span
+                $ <span class="cyan">evil-winrm -i</span> yo.ur.ip.addr <span class="cyan">-u</span> yourusername <span
                     class="cyan">-H</span> thehashgotfromthefiles
             </div>
 
             <p>Another thing that can be used to getcthe screen access without password with <b><i class="yellow">Pass
                         The Hash Algorithm</i></b></p>
             <div class="sqlq">
-                <span class="cyan">xfreedp</span> /v: yo.ur.ip.addr /u: yourusername /pth: thehashgotfromthefiles
+                $ <span class="cyan">xfreedp</span> /v: yo.ur.ip.addr /u: yourusername /pth: thehashgotfromthefiles
             </div>
         </ul>
         <div style="font-size: 29px; color: #ff0000;" class="paras">
@@ -219,9 +222,32 @@
             <p>There are alot of different distros of Linux like the most beginner friendly one <b style="color: orange;">Ubuntu</b> or <b style="color: #0090ff; font-family: 'Poppins', sans-serif; font-weight: 590;">fedora</b> and MacOS is also an option if you can afford it.</p>
             <br>
             <li>Hope</li>
-            <p>This is not a good option. Still you can hope 😊</p>
+            <p>This is not a good option. Still you can hope 😊.</p>
+
         </ul>
+        <br> <br> <br>
+        <div class="btns">
+        <a href="./techssols.html">
+        <button class="back">&larr;</button>
+        </a>   
+        <a href="./error.html">
+            <button class="back">&rarr;</button>
+        </a>
+        <br><br><br><br><br>
+        </div><br>
+       
         <!--This is main div closing tag.-->
+        <br><footer>
+            <div class="text-center text-2xl text-red-500 mb-4">
+                Disclaimer:
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                <p class="text-lg text-gray-700">
+                    All the techniques demonstrated here or later are purely for educational and security purposes. Do not
+                    use this unethically.
+                </p>
+            </div>
+        </footer>
     </div>
 </body>
 

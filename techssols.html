@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <div  
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+    >
     <header>
         <!-- <h1>CyberGuardian</h1> -->
         <a href="./index.html">
@@ -20,10 +23,9 @@
             <a href="/index.html">Home</a>
             <a href="/">About</a>
             <a class="current" href="/techssols.html">Techniques And Solutions</a>
-
         </nav>
     </header>
-    <div class="container">
+    
         <h1>
             Now let's talk about the most famous ways that hackers use to infiltrate
             your devices and apps.
@@ -155,7 +157,7 @@
                 <code>
             <span class="yellow">SELECT * </span> <span class="yellow">FROM </span> <span>users </span> <span class="yellow">WHERE </span> <span>username = '<span class="purple">admin</span>'</span> <span class="yellow">AND </span> <span>password = '</span> <span class="purple">s3cret123'
             </code>
-        </code>
+                </code>
             </div>
             <h3>There are several methods of SQL injections:</h3><br>
             <main>
@@ -184,21 +186,24 @@
                 <div class="sqlq">
                     <code>
                         <span class="yellow">SELECT * </span> <span class="yellow">FROM </span> <span>users </span> <span class="yellow">WHERE </span> <span>username = '<span class="purple">admin' <span class="yellow">&nbsp;OR 1&lt;2</span></span>'</span> <span class="yellow">AND </span> <span>password = '</span> <span class="purple">s3cret123'
-                        </code> 
+                        </code>
                 </div>
-                <p>So it basically just tells SQL to login if the username is admin or the condition 1&lt;2 is true just continue.</p>
+                <p>So it basically just tells SQL to login if the username is admin or the condition 1&lt;2 is true just
+                    continue.</p>
         </div>
         <h2>2. <span class="quotes">Comments</span></h2>
-        <p>Comments are things (or text) to be ignored by the compiler or interpreter (Programs that execute the code and show error if the code is wrong).</p>
+        <p>Comments are things (or text) to be ignored by the compiler or interpreter (Programs that execute the code
+            and show error if the code is wrong).</p>
         <p>Comments in any Programming language are for humans to read when maintaining or reading the code. </p>
-        <p>For example comments in Java or JavaScript are write by putting double-forward-slashes (//) before the line.</p>
+        <p>For example comments in Java or JavaScript are write by putting double-forward-slashes (//) before the line.
+        </p>
         <p>Example: <br></p>
         <div class="sqlq">
-        <p>if (0&lt;1){ <br>
-            &nbsp; &nbsp;console.log("Its less than 1") <br>
-            // This executes when a is less than 1. <br>
-        } 
-        </p>
+            <p>if (0&lt;1){ <br>
+                &nbsp; &nbsp;console.log("Its less than 1") <br>
+                // This executes when a is less than 1. <br>
+                }
+            </p>
         </div>
         <br> <br> <br>
         <p>By the way you don't need to learn Java or JavaScript to understand SQL injections.</p>
@@ -215,44 +220,50 @@
         <div class="sqlq">
             <code>
                 <span class="yellow">SELECT * </span> <span class="yellow">FROM </span> <span>users </span> <span class="yellow">WHERE </span> <span>username = '<span class="purple">admin' <span class="yellow">&nbsp;</span></span> <span class="grey"> -- ' AND password = 's3cret123' </span> </span> 
-                </code> 
+                </code>
         </div>
         <br> <br> <br>
         <p>The grey text will be ignored and the Hacker will login.</p>
         <p>Hackers use this technique a lot when using SQL Injections.</p> <br> <br> <br> <br>
-        <div class="bigtext">Now lets talk about how can you protect yourself and your devices against SQL injections.</div>
-       <br> <br> <br>
+        <div class="bigtext">Now lets talk about how can you protect yourself and your devices against SQL injections.
+        </div>
+        <br> <br> <br>
         <h3>
             <ul>
                 <li>Don't use SQL</li> <br>
                 <p>This seems to be the most obvious choice but its not.</p>
-                <p>Not using SQL as your data-base is not seen very commonly as SQL is the most popular and widely used language for making data-bases.</p>
-                <p>If you don't use SQL you will miss out on so much but if its more than your users privacy and security of their account and it might even be that some Hacker is smart enough to guess the usernames of your account and misuse it in many ways, then go for it nobody is there to stop you.</p>
-                <p>To use any of the methods of SQL Injections, the hacker will first ahve to figure out if the website on which his target has an account on, even uses SQL. This process is quite time consuming.</p> <br><br>
+                <p>Not using SQL as your data-base is not seen very commonly as SQL is the most popular and widely used
+                    language for making data-bases.</p>
+                <p>If you don't use SQL you will miss out on so much but if its more than your users privacy and
+                    security of their account and it might even be that some Hacker is smart enough to guess the
+                    usernames of your account and misuse it in many ways, then go for it nobody is there to stop you.
+                </p>
+                <p>To use any of the methods of SQL Injections, the hacker will first ahve to figure out if the website
+                    on which his target has an account on, even uses SQL. This process is quite time consuming.</p>
+                <br><br>
                 <li>Try trickey usernames</li> <br>
                 <p>Any Hacker will go for the most obvious usernames first.</p>
                 <p>So you can use trickey usernames to have some extra security.</p><br><br>
                 <li>Hope</li> <br>
-                <p>If you don't want to do any of the above listed things, you can just pray and hope nobody Hacks your account.</p>
-                <p>This method is often considered to be as a joke because a Hacker wouldn't care how much you care about your account, in fact sometimes the Hacker will just guess random usernames and use the second method over and over again until somehow he manges to login.</p> <br>
+                <p>If you don't want to do any of the above listed things, you can just pray and hope nobody Hacks your
+                    account.</p>
+                <p>This method is often considered to be as a joke because a Hacker wouldn't care how much you care
+                    about your account, in fact sometimes the Hacker will just guess random usernames and use the second
+                    method over and over again until somehow he manges to login.</p> <br>
                 <li>Use Two or Three step verification.</li><br> <br>
                 <p>This is the method that big companies like Google use to protect their users privacy.</p>
-                <p>When a user (or Hacker) tries to login to an account you send a verification to their mobile where if they agree login on the other device they press yes, if they don't agree they should press No.</p>
-                <p>Or use three step verification where they enter password (avoidable easily with SQL Injections as we discussed earlier), then press Yes on their phone and enter a 6 digit code sent on their email.</p>
+                <p>When a user (or Hacker) tries to login to an account you send a verification to their mobile where if
+                    they agree login on the other device they press yes, if they don't agree they should press No.</p>
+                <p>Or use three step verification where they enter password (avoidable easily with SQL Injections as we
+                    discussed earlier), then press Yes on their phone and enter a 6 digit code sent on their email.</p>
                 <p>A Hacker would most likely fail to login.</p>
-                <p>If the Hacker manages to login even after all that, ask them for their password in every nessecery action (like Linux and its distros ask passwords for every download from their software store, every time you login, every app update, every <span class="yellow">sudo </span>command.) </p>
+                <p>If the Hacker manages to login even after all that, ask them for their password in every nessecery
+                    action (like Linux and its distros ask passwords for every download from their software store, every
+                    time you login, every app update, every <span class="yellow">sudo </span>command.) </p>
                 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
             </ul>
         </h3>
         <br> <br> <br>
-        <a href="./index.html">
-        <button class="back">&larr;</button>
-        </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="./techssols2.html">
-            <button class="forward">&rarr;</button>
-        </a>
-        <br><br><br><br><br>
         <footer>
             Disclaimer:
             Do not use any of these unethically or to harm someone's privacy. This is only for educational purposes.

@@ -1,60 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
+/* Body Styles */
 body {
     height: 100%;
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
     line-height: 1.6;
-    overflow: hidden;
 }
 
+/* Header Styles */
 header {
     background-color: #121212;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all ease 0.5s;
-    width: 100vw;
+    transition: background-color 0.5s ease;
 }
 
-header img{
-    width: 500px;
-    height: 100px;
-    overflow: hidden;
-    object-fit: cover;
-    scale: 0.5;
-    opacity: 0.5;
-    transition: 1s;
-    border: 1px solid black;
-    border-radius: 10%;
+header img {
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 1s, opacity 1s;
 }
 
-header img:hover{
-    scale: 1;
-    opacity: 1;
+header img:hover {
+    transform: scale(1.1);
 }
 
 header h1 {
-    font-size: 50px;
+    font-size: 2rem;
     cursor: pointer;
     color: #ffffff;
 }
 
 header:hover {
     background-color: #212121;
-  
 }
 
+/* Navigation Styles */
 nav {
     display: flex;
     align-items: center;
@@ -63,49 +58,66 @@ nav {
 nav a {
     text-decoration: none;
     color: #ffffff;
-    transition: all ease 0.3s;
-    scale: 0.5;
-    opacity: 0.5;
+    transition: color 0.3s ease;
+    margin: 0 20px;
 }
 
 nav a:hover {
     color: #00ff00;
-    text-decoration: dashed;
-    scale: 1;
-    opacity: 1;
-    margin: 15px;
-    /* font-family: ; */
-    text-wrap: nowrap;
-    position: relative;
 }
 
+.current {
+    color: green;
+    cursor: pointer;
+}
+
+/* Container Styles */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Typography */
+.bigfont,
+.bigfont1,
+.paras,
+.current,
+.both,
+.yellow,
+.purple,
+.sqlq,
+.quotes,
+.h2,
+.inpr,
+.grey,
+.bigtext,
+.hash,
+.blue,
+.cyan,
+.red {
+    font-family: 'Poppins', sans-serif;
+}
+
 .bigfont {
-    font-size: 28px;
+    font-size: 1.75rem;
     color: #ff5555;
-    font-family: 'Georgia', 'Times New Roman', Times, serif, sans-serif;
     margin-top: 20px;
     text-transform: capitalize;
 }
 
 .bigfont1 {
-    font-size: 30px;
+    font-size: 1.5rem;
     color: #ff5555;
-    font-family: initial, 'Poppins', sans-serif;
     margin-top: 20px;
     border: 2px solid #333333;
     padding: 20px;
-    margin-top: 20px;
     border-radius: 8px;
     text-transform: capitalize;
 }
+
 .paras {
-    font-size: 16px;
+    font-size: 1rem;
     color: #cccccc;
     border: 2px solid #333333;
     padding: 20px;
@@ -113,134 +125,155 @@ nav a:hover {
     border-radius: 8px;
 }
 
-.current{
-    color: green;
-    cursor: pointer;
-}
-
-.both{
+.both {
     font-size: larger;
     font-weight: bold;
     color: red;
     text-transform: uppercase;
 }
 
-.yellow{
+.yellow {
     color: yellow;
     font-weight: 700;
 }
 
-.purple{
+.purple {
     color: purple;
     font-weight: 600;
 }
 
-.sqlq{
+.sqlq {
     border: 5px solid black;
     background-color: black;
     border-radius: 5%;
-    font-family: sans-serif;
-    font-family: 'Poppins', sans-serif;
 }
 
-.quotes{
+.quotes {
     color: yellow;
-    /* position: absolute; */
 }
 
-.h2{
-    font-size: 30px;
-    transition: all ease 2s;
+.h2 {
+    font-size: 1.5rem;
+    transition: color 2s ease;
     position: relative;
 }
 
-.h2:hover{
+.h2:hover,
+.h2:hover .quotes {
     color: aquamarine;
-    /* padding: 23px; */
-    /* border: 1px solid white; */
 }
 
-.h2 .quotes:hover{
-    color: aquamarine;
-    /* padding: 23px; */
-}
-
-.inpr{
+.inpr {
     padding: 20px;
-    font-size: 35px;
+    font-size: 2.1875rem;
     background-color: transparent;
     border: 4px solid black;
     cursor: default;
     border-radius: 5%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.grey{
+.grey {
     color: grey;
     font-weight: 200;
 }
 
-.bigtext{
-    font-size: 45px;
+.bigtext {
+    font-size: 2.8125rem;
     color: red;
 }
 
-ul li{
+ul li {
     list-style: auto;
 }
 
-
-.back{
+/* Button Styles */
+.back,
+.forward {
     border: 2px solid black;
     background-color: black;
     color: white;
-    width: 7%;
+    width: 100%;
 }
 
-.forward{
-    border: 2px solid black;
-    background-color: black;
-    color: white;
-    width: 7%;
-}
-
-/* Your existing styles remain unchanged */
-
+/* Footer Styles */
 footer {
-    background-color: grey;
-    padding: 20px; /* Add padding for spacing */
+    background-color: #333333;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
+    align-items: flex-start;
 }
 
 footer .bigfont {
     color: black;
-    margin-top: 20px; /* Add margin for spacing */
+    margin-top: 20px;
 }
 
-.hash{
+.hash {
     text-transform: uppercase;
     color: yellow;
     font-weight: bold;
 }
 
-.blue{
+.blue {
     color: blue;
     text-decoration: underline;
 }
 
-.cyan{
+.cyan {
     color: cyan;
 }
 
-.red{
+.red {
     color: red;
     font-weight: 700;
 }
-/* Responsive styles for smaller screens */
+
+#python-logo {
+    height: 10vh;
+    width: 10vw;
+    display: block;
+    margin-right: 23vw;
+}
+
+.lang {
+    display: flex;
+}
+
+a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
 @media only screen and (max-width: 600px) {
     footer {
-        width: 100%; /* Adjust width for smaller screens */
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 200px) {
+    body::before {
+        content: "Screen too small to load this website.";
+        display: block;
+        background-color: blue;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body::before {
+        content: "Screen too small to show any content";
+        display: block;
+        background-color: blue;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 1rem;
     }
 }
